@@ -4,7 +4,13 @@ pub(crate) fn camera_zoom_system(
     mut event_reader: EventReader<MouseWheel>,
     mut query: Query<(&Camera, &mut Transform, &GlobalTransform)>,
     windows: Query<&Window>,
+    ui_query: Query<&Interaction>,
 ) {
+    for interaction in &ui_query {
+        if *interaction != Interaction::None {
+            return;
+        }
+    }
     let zoom_factor: f32 = -0.1; // Adjust as needed
     let mut zoom_delta = 0.0;
 

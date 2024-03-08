@@ -1,18 +1,8 @@
 use bevy::prelude::*;
-use enum_map::{enum_map, Enum, EnumMap};
+use enum_map::EnumMap;
 use std::ops::Index;
 
-#[derive(Debug, Enum, Clone, Copy)]
-pub enum ColorPallet {
-    Red,
-    Green,
-    Blue,
-    Yellow,
-    Cyan,
-    Magenta,
-    White,
-    Black,
-}
+use super::colors::*;
 
 #[derive(Debug, Resource)]
 pub struct MaterialHandles {
@@ -28,21 +18,19 @@ impl Index<ColorPallet> for MaterialHandles {
     }
 }
 
-// add all the colors in to a resource
-pub(crate) fn initialize_colors(
-    mut commands: Commands,
-    mut materials: ResMut<Assets<ColorMaterial>>,
-) {
-    let colors = enum_map! {
-       ColorPallet::Red => materials.add(Color::rgb(1.0, 0.0, 0.0)),
-       ColorPallet::Green => materials.add(Color::rgb(0.0, 1.0, 0.0)),
-       ColorPallet::Blue => materials.add(Color::rgb(0.0, 0.0, 1.0)),
-       ColorPallet::Yellow => materials.add(Color::rgb(1.0, 1.0, 0.0)),
-       ColorPallet::Cyan => materials.add(Color::rgb(0.0, 1.0, 1.0)),
-       ColorPallet::Magenta => materials.add(Color::rgb(1.0, 0.0, 1.0)),
-       ColorPallet::White => materials.add(Color::rgb(1.0, 1.0, 1.0)),
-       ColorPallet::Black => materials.add(Color::rgb(0.0, 0.0, 0.0)),
-    };
+impl FromWorld for MaterialHandles {
+    fn from_world(world: &mut World) -> Self {
+        let mut materials = world.get_resource_mut::<Assets<ColorMaterial>>().unwrap();
+        let colors = Colors::default();
+        let mut material_handles = EnumMap::<ColorPallet, Handle<ColorMaterial>>::default();
 
-    commands.insert_resource(MaterialHandles { materials: colors });
+        for (color_pallet, color) in colors.colors.iter() {
+            let handle = materials.add(ColorMaterial::from(*color));
+            material_handles[color_pallet] = handle;
+        }
+
+        MaterialHandles {
+            materials: material_handles,
+        }
+    }
 }

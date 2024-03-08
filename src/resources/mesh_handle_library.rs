@@ -1,11 +1,16 @@
-use bevy::{prelude::*, sprite::Mesh2dHandle};
-use bevy_prototype_lyon::prelude::*;
+use bevy::{
+    prelude::*,
+    sprite::{MaterialMesh2dBundle, Mesh2dHandle},
+};
+
 use enum_map::{enum_map, Enum, EnumMap};
 use std::ops::Index;
 
+use crate::sizes;
+
 #[derive(Debug, Enum, Clone, Copy)]
 pub enum MeshType {
-    Rectangle,
+    NotGate,
     Circle,
 }
 
@@ -24,8 +29,8 @@ impl Index<MeshType> for MeshHandles {
 
 pub(crate) fn initialize_meshes(mut commands: Commands, mut meshes: ResMut<Assets<Mesh>>) {
     let mesh_resources = enum_map! {
-       MeshType::Rectangle => Mesh2dHandle(meshes.add(Rectangle::new(50.0, 100.0))),
-       MeshType::Circle => Mesh2dHandle(meshes.add(Circle { radius: 50.0 })),
+       MeshType::NotGate => Mesh2dHandle(meshes.add(Rectangle::new(sizes::NOT_GATE_WIDTH,sizes::NOT_GATE_HEIGHT))),
+       MeshType::Circle => Mesh2dHandle(meshes.add(Circle { radius: sizes::INPUT_NODE_RADIUS})),
     };
 
     commands.insert_resource(MeshHandles {
@@ -33,41 +38,98 @@ pub(crate) fn initialize_meshes(mut commands: Commands, mut meshes: ResMut<Asset
     });
 }
 
-pub(crate) fn line(
-    points: Vec<Vec2>,
-) -> (
-    bevy_prototype_lyon::entity::ShapeBundle,
-    bevy_prototype_lyon::draw::Stroke,
+pub fn draw_line(
+    commands: &mut Commands,
+    start: Vec2,
+    end: Vec2,
+    thickness: f32,
+    meshes: &mut ResMut<Assets<Mesh>>,
+    material_handle: Handle<ColorMaterial>,
+    parent: Entity,
 ) {
-    let mut path_builder = PathBuilder::new();
-    path_builder.move_to(Vec2::new(0., 0.));
+    let line_length = start.distance(end);
+    let midpoint = (start + end) / 2.0;
+    let rotation = (end - start).angle_between(Vec2::X);
 
-    for window in points.windows(4) {
-        if let [start, control1, control2, end] = window {
-            let control1 = calculate_control_point(*start, *control1, *control2, 0.9);
-            let control2 = calculate_control_point(*control2, control1, *end, 0.9);
-            path_builder.quadratic_bezier_to(control1, control2);
-        }
-    }
-    let path = path_builder.build();
-
-    (
-        ShapeBundle {
-            path,
-            spatial: SpatialBundle {
-                transform: Transform::from_xyz(0., 75., 0.),
-                ..default()
+    let line = commands
+        .spawn(MaterialMesh2dBundle {
+            mesh: Mesh2dHandle(meshes.add(Rectangle::new(line_length, thickness))),
+            material: material_handle.clone(),
+            transform: Transform {
+                translation: Vec3::new(midpoint.x, midpoint.y, 0.0),
+                rotation: Quat::from_rotation_z(-rotation),
+                scale: Vec3::ONE,
             },
-            ..default()
-        },
-        Stroke::new(Color::RED, 1.0),
-    )
+            ..Default::default()
+        })
+        .id();
+
+    // draw a circle at either end of the line
+    let circle_radius = thickness * 0.5;
+
+    let circle = commands
+        .spawn(MaterialMesh2dBundle {
+            mesh: Mesh2dHandle(meshes.add(Circle {
+                radius: circle_radius,
+            })),
+            material: material_handle.clone(),
+            transform: Transform {
+                translation: Vec3::new(start.x, start.y, 0.0),
+                rotation: Quat::IDENTITY,
+                scale: Vec3::ONE,
+            },
+            ..Default::default()
+        })
+        .id();
+    let mut parent = commands.entity(parent);
+    parent.push_children(&[line]);
+    parent.push_children(&[circle]);
 }
 
-fn calculate_control_point(start: Vec2, control: Vec2, end: Vec2, smoothness: f32) -> Vec2 {
-    let vec1 = control - start;
-    let vec2 = end - control;
+#[derive(Component)]
+struct Path;
 
-    let control_point = control + vec1.lerp(vec2, smoothness);
-    control_point
+pub fn draw_path(
+    commands: &mut Commands,
+    path: &[Vec2],
+    thickness: f32,
+    mut meshes: &mut ResMut<Assets<Mesh>>,
+    material_handle: Handle<ColorMaterial>,
+) -> Entity {
+    let path_entity = commands.spawn((Path, SpatialBundle::default())).id();
+
+    for i in 0..path.len() - 1 {
+        let start = path[i];
+        let end = path[i + 1];
+        draw_line(
+            commands,
+            start,
+            end,
+            thickness,
+            &mut meshes,
+            material_handle.clone(),
+            path_entity,
+        );
+    }
+
+    // add a circle to the end of the path
+    let end_point = path.last().cloned().unwrap();
+    let end_cap = commands
+        .spawn(MaterialMesh2dBundle {
+            mesh: Mesh2dHandle(meshes.add(Circle {
+                radius: thickness * 0.5,
+            })),
+            material: material_handle.clone(),
+            transform: Transform {
+                translation: Vec3::new(end_point.x, end_point.y, 0.0),
+                rotation: Quat::IDENTITY,
+                scale: Vec3::ONE,
+            },
+            ..Default::default()
+        })
+        .id();
+
+    commands.entity(path_entity).push_children(&[end_cap]);
+
+    path_entity
 }
