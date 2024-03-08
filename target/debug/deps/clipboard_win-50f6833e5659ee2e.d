@@ -1,0 +1,11 @@
+C:\Users\jacks\Documents\GitHub\Project_lovelace_redux_bevy_0.13.0\target\debug\deps\libclipboard_win-50f6833e5659ee2e.rmeta: C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\lib.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\sys.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\types.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\formats.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\html.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\raw.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\utils.rs
+
+C:\Users\jacks\Documents\GitHub\Project_lovelace_redux_bevy_0.13.0\target\debug\deps\clipboard_win-50f6833e5659ee2e.d: C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\lib.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\sys.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\types.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\formats.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\html.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\raw.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\utils.rs
+
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\lib.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\sys.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\types.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\formats.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\html.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\raw.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\clipboard-win-5.2.0\src\utils.rs:

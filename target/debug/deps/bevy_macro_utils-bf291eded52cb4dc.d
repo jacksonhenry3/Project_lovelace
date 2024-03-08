@@ -1,0 +1,10 @@
+C:\Users\jacks\Documents\GitHub\Project_lovelace_redux_bevy_0.13.0\target\debug\deps\libbevy_macro_utils-bf291eded52cb4dc.rmeta: C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\bevy_macro_utils-0.11.3\src\lib.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\bevy_macro_utils-0.11.3\src\attrs.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\bevy_macro_utils-0.11.3\src\shape.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\bevy_macro_utils-0.11.3\src\symbol.rs
+
+C:\Users\jacks\Documents\GitHub\Project_lovelace_redux_bevy_0.13.0\target\debug\deps\libbevy_macro_utils-bf291eded52cb4dc.rlib: C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\bevy_macro_utils-0.11.3\src\lib.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\bevy_macro_utils-0.11.3\src\attrs.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\bevy_macro_utils-0.11.3\src\shape.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\bevy_macro_utils-0.11.3\src\symbol.rs
+
+C:\Users\jacks\Documents\GitHub\Project_lovelace_redux_bevy_0.13.0\target\debug\deps\bevy_macro_utils-bf291eded52cb4dc.d: C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\bevy_macro_utils-0.11.3\src\lib.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\bevy_macro_utils-0.11.3\src\attrs.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\bevy_macro_utils-0.11.3\src\shape.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\bevy_macro_utils-0.11.3\src\symbol.rs
+
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\bevy_macro_utils-0.11.3\src\lib.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\bevy_macro_utils-0.11.3\src\attrs.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\bevy_macro_utils-0.11.3\src\shape.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\bevy_macro_utils-0.11.3\src\symbol.rs:

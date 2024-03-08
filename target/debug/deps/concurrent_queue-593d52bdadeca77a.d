@@ -1,0 +1,9 @@
+C:\Users\jacks\Documents\GitHub\Project_lovelace_redux_bevy_0.13.0\target\debug\deps\libconcurrent_queue-593d52bdadeca77a.rmeta: C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\concurrent-queue-2.4.0\src\lib.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\concurrent-queue-2.4.0\src\bounded.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\concurrent-queue-2.4.0\src\single.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\concurrent-queue-2.4.0\src\unbounded.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\concurrent-queue-2.4.0\src\sync.rs
+
+C:\Users\jacks\Documents\GitHub\Project_lovelace_redux_bevy_0.13.0\target\debug\deps\concurrent_queue-593d52bdadeca77a.d: C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\concurrent-queue-2.4.0\src\lib.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\concurrent-queue-2.4.0\src\bounded.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\concurrent-queue-2.4.0\src\single.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\concurrent-queue-2.4.0\src\unbounded.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\concurrent-queue-2.4.0\src\sync.rs
+
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\concurrent-queue-2.4.0\src\lib.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\concurrent-queue-2.4.0\src\bounded.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\concurrent-queue-2.4.0\src\single.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\concurrent-queue-2.4.0\src\unbounded.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\concurrent-queue-2.4.0\src\sync.rs:

@@ -1,0 +1,10 @@
+C:\Users\jacks\Documents\GitHub\Project_lovelace_redux_bevy_0.13.0\target\debug\deps\libwindows_result-2c4e77885d37568f.rmeta: C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\lib.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\bindings.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\com.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\strings.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\error.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\hresult.rs
+
+C:\Users\jacks\Documents\GitHub\Project_lovelace_redux_bevy_0.13.0\target\debug\deps\windows_result-2c4e77885d37568f.d: C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\lib.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\bindings.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\com.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\strings.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\error.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\hresult.rs
+
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\lib.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\bindings.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\com.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\strings.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\error.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\windows-result-0.1.0\src\hresult.rs:

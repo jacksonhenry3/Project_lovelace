@@ -1,0 +1,10 @@
+C:\Users\jacks\Documents\GitHub\Project_lovelace_redux_bevy_0.13.0\target\debug\deps\libcrc32fast-f55fb1f0222ec339.rmeta: C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\lib.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\baseline.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\combine.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\specialized\mod.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\table.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\specialized\pclmulqdq.rs
+
+C:\Users\jacks\Documents\GitHub\Project_lovelace_redux_bevy_0.13.0\target\debug\deps\crc32fast-f55fb1f0222ec339.d: C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\lib.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\baseline.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\combine.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\specialized\mod.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\table.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\specialized\pclmulqdq.rs
+
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\lib.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\baseline.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\combine.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\specialized\mod.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\table.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\crc32fast-1.4.0\src\specialized\pclmulqdq.rs:

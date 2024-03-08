@@ -1,0 +1,11 @@
+C:\Users\jacks\Documents\GitHub\Project_lovelace_redux_bevy_0.13.0\target\debug\deps\liblibloading-61a22266fd25e181.rmeta: C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\lib.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\changelog.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\os\mod.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\os\windows\mod.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\util.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\error.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\safe.rs
+
+C:\Users\jacks\Documents\GitHub\Project_lovelace_redux_bevy_0.13.0\target\debug\deps\libloading-61a22266fd25e181.d: C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\lib.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\changelog.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\os\mod.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\os\windows\mod.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\util.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\error.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\safe.rs
+
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\lib.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\changelog.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\os\mod.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\os\windows\mod.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\util.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\error.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\libloading-0.8.3\src\safe.rs:

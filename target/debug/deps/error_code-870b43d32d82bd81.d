@@ -1,0 +1,10 @@
+C:\Users\jacks\Documents\GitHub\Project_lovelace_redux_bevy_0.13.0\target\debug\deps\liberror_code-870b43d32d82bd81.rmeta: C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\lib.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\defs.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\types.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\utils.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\posix.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\system.rs
+
+C:\Users\jacks\Documents\GitHub\Project_lovelace_redux_bevy_0.13.0\target\debug\deps\error_code-870b43d32d82bd81.d: C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\lib.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\defs.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\types.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\utils.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\posix.rs C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\system.rs
+
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\lib.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\defs.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\types.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\utils.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\posix.rs:
+C:\Users\jacks\.cargo\registry\src\index.crates.io-6f17d22bba15001f\error-code-3.2.0\src\system.rs:
