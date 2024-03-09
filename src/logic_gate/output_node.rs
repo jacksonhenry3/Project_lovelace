@@ -31,7 +31,9 @@ impl OutputNodeBundle {
         let mesh_handle = mesh_handle_library[MeshType::Circle].clone();
         let material_handle = material_handle_library[ColorPallet::FalseColor].clone();
 
-        let output_bundle = OutputNodeBundle {
+        
+
+        OutputNodeBundle {
             value: Value::default(),
             output_node,
             sprite: MaterialMesh2dBundle {
@@ -39,8 +41,6 @@ impl OutputNodeBundle {
                 material: material_handle,
                 ..default()
             },
-        };
-
-        output_bundle
+        }
     }
 }

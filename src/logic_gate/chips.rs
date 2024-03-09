@@ -1,10 +1,8 @@
-use bevy::sprite;
-use bevy::utils::HashMap;
 use bevy::{prelude::*, sprite::MaterialMesh2dBundle};
 
 use crate::logic_gate::{input_node, output_node};
 use crate::sizes::{NOT_GATE_HEIGHT, NOT_GATE_WIDTH};
-use crate::{sizes, z_height_manager, ColorPallet, MeshType};
+use crate::{z_height_manager, ColorPallet, MeshType};
 use crate::{Draggable, MaterialHandles, MeshHandles};
 
 use super::input_node::*;
@@ -47,7 +45,7 @@ impl NotBundle {
     pub fn spawn(
         commands: &mut Commands,
         board: Entity,
-        mut z_height_manager: &mut ResMut<z_height_manager>,
+        z_height_manager: &mut ResMut<z_height_manager>,
         mesh_handles: &Res<MeshHandles>,
         material_handles: &Res<MaterialHandles>,
         position: Vec2,
@@ -102,7 +100,7 @@ impl NotBundle {
 
 pub fn not_gate_system(
     not_gate_query: Query<&Chip, With<NotGate>>,
-    input_query: Query<(&Value), (With<InputNode>, Changed<Value>)>,
+    input_query: Query<&Value, (With<InputNode>, Changed<Value>)>,
     mut output_query: Query<&mut Value, (With<OutputNode>, Without<InputNode>)>,
 ) {
     for not_gate in not_gate_query.into_iter() {
@@ -118,7 +116,7 @@ impl AndBundle {
     pub fn spawn(
         commands: &mut Commands,
         board: Entity,
-        mut z_height_manager: &mut ResMut<z_height_manager>,
+        z_height_manager: &mut ResMut<z_height_manager>,
         mesh_handles: &Res<MeshHandles>,
         material_handles: &Res<MaterialHandles>,
         position: Vec2,
@@ -186,7 +184,7 @@ impl AndBundle {
 pub fn and_gate_system(
     and_gate_query: Query<&Chip, With<AndGate>>,
     change_input_query: Query<Entity, (With<InputNode>, Changed<Value>)>,
-    input_query: Query<(&Value), With<InputNode>>,
+    input_query: Query<&Value, With<InputNode>>,
     mut output_query: Query<&mut Value, (With<OutputNode>, Without<InputNode>)>,
 ) {
     for and_gate in and_gate_query.iter() {

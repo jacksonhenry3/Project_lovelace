@@ -1,4 +1,4 @@
-use bevy::{math::vec2, prelude::*, render::primitives::Aabb, sprite::MaterialMesh2dBundle};
+use bevy::{math::vec2, prelude::*, render::primitives::Aabb};
 use bevy_prototype_lyon::prelude::*;
 use bevy_inspector_egui::quick::WorldInspectorPlugin;
 mod resources;
@@ -48,9 +48,9 @@ fn setup(
 ) {
     commands.spawn((Camera2dBundle::default(), Draggable::default()));
 
-    let board = commands.spawn((world_control::make_board(&mut
+    let board = commands.spawn(world_control::make_board(&mut
         meshes,
-        &material_handles))).id();
+        &material_handles)).id();
 
     // let mesh_handle = mesh_handles[MeshType::NotGate].clone();
     // let material_handle = material_handles[ColorPallet::Blue].clone();
@@ -286,11 +286,11 @@ pub(crate) fn input_node_click_system(
 
 
     for (mut input_node, global_transform, aabb) in query.iter_mut() {
-        if let Some(_) = point_in_region(
+        if point_in_region(
             mouse_position,
             global_transform.translation().xy(),
             aabb.half_extents.xy(),
-        ) {
+        ).is_some() {
             input_node.0 = !input_node.0;
             break;
         }

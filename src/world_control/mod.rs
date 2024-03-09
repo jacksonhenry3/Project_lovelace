@@ -37,7 +37,8 @@ pub fn make_board(
         sizes::BOARD_EDGE_LENGTH,
     )));
     let material_handle = material_handles[ColorPallet::BoardColor].clone();
-    let board = (
+    
+    (
         Draggable {
             being_dragged: false,
             click_offset: Vec2::ZERO,
@@ -49,6 +50,5 @@ pub fn make_board(
             ..Default::default()
         },
         Board,
-    );
-    board
+    )
 }

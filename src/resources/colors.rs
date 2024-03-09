@@ -3,10 +3,7 @@ use std::ops::Index;
 use bevy::prelude::*;
 use enum_map::{enum_map, Enum, EnumMap};
 
-use crate::{
-    logic_gate::{input_node::InputNode, output_node::OutputNode, value::Value},
-    MaterialHandles,
-};
+use crate::{logic_gate::value::Value, MaterialHandles};
 
 #[derive(Debug, Enum, Clone, Copy)]
 pub enum ColorPallet {

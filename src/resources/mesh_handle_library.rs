@@ -95,7 +95,7 @@ pub fn draw_path(
     commands: &mut Commands,
     path: &[Vec2],
     thickness: f32,
-    mut meshes: &mut ResMut<Assets<Mesh>>,
+    meshes: &mut ResMut<Assets<Mesh>>,
     material_handle: Handle<ColorMaterial>,
 ) -> Entity {
     let path_entity = commands.spawn((Path, SpatialBundle::default())).id();
@@ -108,7 +108,7 @@ pub fn draw_path(
             start,
             end,
             thickness,
-            &mut meshes,
+            meshes,
             material_handle.clone(),
             path_entity,
         );

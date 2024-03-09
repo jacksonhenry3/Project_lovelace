@@ -1,14 +1,8 @@
 use bevy::prelude::*;
 
-#[derive(Debug, Resource)]
+#[derive(Debug, Resource, Default)]
 pub struct z_height_manager {
     pub heights: Vec<f32>,
-}
-
-impl Default for z_height_manager {
-    fn default() -> Self {
-        z_height_manager { heights: vec![] }
-    }
 }
 
 impl z_height_manager {
@@ -19,7 +13,7 @@ impl z_height_manager {
         }
 
         self.heights.push(height);
-        return height;
+        height
     }
 
     pub fn selected(&mut self, current_height: f32) -> f32 {
