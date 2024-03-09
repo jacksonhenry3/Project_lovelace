@@ -1,8 +1,8 @@
-use bevy::{math::vec2, prelude::*, sprite::MaterialMesh2dBundle};
+use bevy::{math::vec2, prelude::*, render::primitives::Aabb, sprite::MaterialMesh2dBundle};
 use bevy_prototype_lyon::prelude::*;
 use bevy_inspector_egui::quick::WorldInspectorPlugin;
 mod resources;
-use logic_gate::ChipPlugin;
+use logic_gate::{input_node::InputNode, value::Value, ChipPlugin};
 use resources::*;
 mod click_and_drag;
 use click_and_drag::*;
@@ -16,6 +16,7 @@ use bevy::{
 
 };
 
+use utils::{get_mouse_position, point_in_region};
 use world_control::WorldInteractionPlugin;
 pub mod logic_gate;
 
@@ -31,7 +32,7 @@ fn main() {
         ))
         .add_plugins(WorldInspectorPlugin::new())
         .add_systems(Startup, setup)
-        .add_systems(Update, click_and_drag_system)
+        .add_systems(Update, (click_and_drag_system,input_node_click_system))
         .add_plugins(ShapePlugin)
         .run();
 }
@@ -58,6 +59,13 @@ fn setup(
     logic_gate::chips::NotBundle::spawn(&mut commands,board,&mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0,0.0));
     logic_gate::chips::NotBundle::spawn(&mut commands,board,&mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0,0.0));
     logic_gate::chips::NotBundle::spawn(&mut commands,board,&mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0,0.0));
+
+    logic_gate::chips::AndBundle::spawn(&mut commands, board, &mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0, 0.0));
+    logic_gate::chips::AndBundle::spawn(&mut commands, board, &mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0, 0.0));
+    logic_gate::chips::AndBundle::spawn(&mut commands, board, &mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0, 0.0));
+    logic_gate::chips::AndBundle::spawn(&mut commands, board, &mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0, 0.0));
+
+    // 
 
 
 //     for i in 0..10 {
@@ -257,6 +265,34 @@ fn mouse_scroll(
             scrolling_list.position += dy;
             scrolling_list.position = scrolling_list.position.clamp(-max_scroll, 0.);
             style.top = Val::Px(scrolling_list.position);
+        }
+    }
+}
+
+pub(crate) fn input_node_click_system(
+    mouse_button_input: Res<ButtonInput<MouseButton>>,
+    mut query: Query<(&mut Value, &GlobalTransform, &Aabb), With<InputNode>>,
+    camera_query: Query<(&Camera, &GlobalTransform)>,
+    windows: Query<&Window>,
+) {
+    if !mouse_button_input.just_pressed(MouseButton::Left) {
+        return
+    }
+    let (camera, camera_transform) = camera_query.single();
+    // allows for entitys with a click and drag component to be dragged. The entity with the largest z index will be prioritized.
+    let Some(mouse_position) = get_mouse_position(camera, camera_transform, windows) else {
+        return;
+    };
+
+
+    for (mut input_node, global_transform, aabb) in query.iter_mut() {
+        if let Some(_) = point_in_region(
+            mouse_position,
+            global_transform.translation().xy(),
+            aabb.half_extents.xy(),
+        ) {
+            input_node.0 = !input_node.0;
+            break;
         }
     }
 }

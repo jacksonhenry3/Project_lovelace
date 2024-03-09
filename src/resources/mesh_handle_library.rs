@@ -11,6 +11,7 @@ use crate::sizes;
 #[derive(Debug, Enum, Clone, Copy)]
 pub enum MeshType {
     NotGate,
+    AndGate,
     Circle,
 }
 
@@ -29,7 +30,8 @@ impl Index<MeshType> for MeshHandles {
 
 pub(crate) fn initialize_meshes(mut commands: Commands, mut meshes: ResMut<Assets<Mesh>>) {
     let mesh_resources = enum_map! {
-       MeshType::NotGate => Mesh2dHandle(meshes.add(Rectangle::new(sizes::NOT_GATE_WIDTH,sizes::NOT_GATE_HEIGHT))),
+        MeshType::NotGate => Mesh2dHandle(meshes.add(Rectangle::new(sizes::NOT_GATE_WIDTH,sizes::NOT_GATE_HEIGHT))),
+        MeshType::AndGate => Mesh2dHandle(meshes.add(Rectangle::new(sizes::NOT_GATE_WIDTH,sizes::NOT_GATE_HEIGHT*2.0))),
        MeshType::Circle => Mesh2dHandle(meshes.add(Circle { radius: sizes::INPUT_NODE_RADIUS})),
     };
 

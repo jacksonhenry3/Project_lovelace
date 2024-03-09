@@ -4,7 +4,7 @@ use bevy::prelude::*;
 use enum_map::{enum_map, Enum, EnumMap};
 
 use crate::{
-    logic_gate::{input_node::InputNode, output_node::OutputNode},
+    logic_gate::{input_node::InputNode, output_node::OutputNode, value::Value},
     MaterialHandles,
 };
 
@@ -48,25 +48,12 @@ impl Default for Colors {
 }
 
 pub fn color_system(
-    mut input_query: Query<(&mut Handle<ColorMaterial>, &InputNode), Changed<InputNode>>,
-    mut output_query: Query<
-        (&mut Handle<ColorMaterial>, &OutputNode),
-        (Without<InputNode>, Changed<OutputNode>),
-    >,
+    mut input_query: Query<(&mut Handle<ColorMaterial>, &Value), Changed<Value>>,
+
     material_handles: Res<MaterialHandles>,
 ) {
     for (mut material, node) in input_query.iter_mut() {
-        let color = if node.value {
-            ColorPallet::TrueColor
-        } else {
-            ColorPallet::FalseColor
-        };
-
-        *material = material_handles[color].clone();
-    }
-
-    for (mut material, node) in output_query.iter_mut() {
-        let color = if node.value {
+        let color = if node.0 {
             ColorPallet::TrueColor
         } else {
             ColorPallet::FalseColor

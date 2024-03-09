@@ -2,23 +2,22 @@ use bevy::{core_pipeline::core_2d::graph::input, prelude::*, sprite::MaterialMes
 
 use crate::{ColorPallet, MaterialHandles, MeshHandles, MeshType};
 
+use super::value::Value;
+
 #[derive(Component)]
 pub struct InputNode {
-    pub value: bool,
     pub source: Option<Entity>,
 }
 
 impl InputNode {
     pub fn default() -> InputNode {
-        InputNode {
-            value: false,
-            source: None,
-        }
+        InputNode { source: None }
     }
 }
 
 #[derive(Bundle)]
 pub struct InputNodeBundle {
+    value: Value,
     input_node: InputNode,
     sprite: MaterialMesh2dBundle<ColorMaterial>,
 }
@@ -33,6 +32,7 @@ impl InputNodeBundle {
         let material_handle = material_handle_library[ColorPallet::FalseColor].clone();
 
         let input_bundle = InputNodeBundle {
+            value: Value::default(),
             input_node,
             sprite: MaterialMesh2dBundle {
                 mesh: mesh_handle,

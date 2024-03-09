@@ -2,23 +2,22 @@ use bevy::{prelude::*, sprite::MaterialMesh2dBundle};
 
 use crate::{ColorPallet, MaterialHandles, MeshHandles, MeshType};
 
+use super::value::Value;
+
 #[derive(Component)]
 pub struct OutputNode {
-    pub value: bool,
     pub endpoints: Vec<Entity>,
 }
 
 impl OutputNode {
     pub fn default() -> OutputNode {
-        OutputNode {
-            value: false,
-            endpoints: vec![],
-        }
+        OutputNode { endpoints: vec![] }
     }
 }
 
 #[derive(Bundle)]
 pub struct OutputNodeBundle {
+    value: Value,
     output_node: OutputNode,
     sprite: MaterialMesh2dBundle<ColorMaterial>,
 }
@@ -33,6 +32,7 @@ impl OutputNodeBundle {
         let material_handle = material_handle_library[ColorPallet::FalseColor].clone();
 
         let output_bundle = OutputNodeBundle {
+            value: Value::default(),
             output_node,
             sprite: MaterialMesh2dBundle {
                 mesh: mesh_handle,
