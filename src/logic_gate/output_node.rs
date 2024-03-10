@@ -1,8 +1,4 @@
-use bevy::{prelude::*, sprite::MaterialMesh2dBundle};
-
-use crate::{ColorPallet, MaterialHandles, MeshHandles, MeshType};
-
-use super::value::Value;
+use crate::*;
 
 #[derive(Component)]
 pub struct OutputNode {
@@ -20,6 +16,7 @@ pub struct OutputNodeBundle {
     value: Value,
     output_node: OutputNode,
     sprite: MaterialMesh2dBundle<ColorMaterial>,
+    interactable: Interactable,
 }
 
 impl OutputNodeBundle {
@@ -31,8 +28,6 @@ impl OutputNodeBundle {
         let mesh_handle = mesh_handle_library[MeshType::Circle].clone();
         let material_handle = material_handle_library[ColorPallet::FalseColor].clone();
 
-        
-
         OutputNodeBundle {
             value: Value::default(),
             output_node,
@@ -41,6 +36,7 @@ impl OutputNodeBundle {
                 material: material_handle,
                 ..default()
             },
+            interactable: Interactable::default(),
         }
     }
 }

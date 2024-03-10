@@ -23,12 +23,7 @@ impl z_height_manager {
         // remove current_height from self.heights
         // this assumes there is only ever one object with a given height, which is the goal.
         self.heights.retain(|&h| h != current_height);
-        let new_height = self
-            .heights
-            .iter()
-            .cloned()
-            .fold(f32::NEG_INFINITY, f32::max)
-            + 1.0;
+        let new_height = self.heights.iter().cloned().fold(0.0, f32::max) + 1.0;
         self.heights.push(new_height);
         new_height
     }

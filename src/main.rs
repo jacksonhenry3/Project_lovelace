@@ -4,8 +4,11 @@ use bevy_inspector_egui::quick::WorldInspectorPlugin;
 mod resources;
 use logic_gate::{input_node::InputNode, value::Value, ChipPlugin};
 use resources::*;
-mod click_and_drag;
-use click_and_drag::*;
+
+mod mouse_interactions;
+use mouse_interactions::*;
+
+
 mod utils;
 use bevy::{
     a11y::{
@@ -17,8 +20,11 @@ use bevy::{
 };
 
 use utils::{get_mouse_position, point_in_region};
+use wires::connection_system;
 use world_control::WorldInteractionPlugin;
 pub mod logic_gate;
+pub mod wires;
+use bevy::sprite::MaterialMesh2dBundle;
 
 mod world_control;
 
@@ -32,8 +38,8 @@ fn main() {
         ))
         .add_plugins(WorldInspectorPlugin::new())
         .add_systems(Startup, setup)
-        .add_systems(Update, (click_and_drag_system,input_node_click_system))
-        .add_plugins(ShapePlugin)
+        .add_systems(Update, (input_node_click_system,connection_system))
+        .add_plugins((ShapePlugin,MouseInteractionPlugin))
         .run();
 }
 
@@ -46,7 +52,7 @@ fn setup(
     asset_server: Res<AssetServer>,
     colors: Res<Colors>,
 ) {
-    commands.spawn((Camera2dBundle::default(), Draggable::default()));
+    commands.spawn(Camera2dBundle::default());
 
     let board = commands.spawn(world_control::make_board(&mut
         meshes,
@@ -55,10 +61,10 @@ fn setup(
     // let mesh_handle = mesh_handles[MeshType::NotGate].clone();
     // let material_handle = material_handles[ColorPallet::Blue].clone();
 
-    logic_gate::chips::NotBundle::spawn(&mut commands,board,&mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0,0.0));
-    logic_gate::chips::NotBundle::spawn(&mut commands,board,&mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0,0.0));
-    logic_gate::chips::NotBundle::spawn(&mut commands,board,&mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0,0.0));
-    logic_gate::chips::NotBundle::spawn(&mut commands,board,&mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0,0.0));
+    // logic_gate::chips::NotBundle::spawn(&mut commands,board,&mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0,0.0));
+    // logic_gate::chips::NotBundle::spawn(&mut commands,board,&mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0,0.0));
+    // logic_gate::chips::NotBundle::spawn(&mut commands,board,&mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0,0.0));
+    // logic_gate::chips::NotBundle::spawn(&mut commands,board,&mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0,0.0));
 
     logic_gate::chips::AndBundle::spawn(&mut commands, board, &mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0, 0.0));
     logic_gate::chips::AndBundle::spawn(&mut commands, board, &mut z_height_manager, &mesh_handles, &material_handles, vec2(0.0, 0.0));

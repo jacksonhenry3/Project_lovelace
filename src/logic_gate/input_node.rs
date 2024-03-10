@@ -1,6 +1,6 @@
 use bevy::{prelude::*, sprite::MaterialMesh2dBundle};
 
-use crate::{ColorPallet, MaterialHandles, MeshHandles, MeshType};
+use crate::{ColorPallet, Interactable, MaterialHandles, MeshHandles, MeshType};
 
 use super::value::Value;
 
@@ -20,6 +20,7 @@ pub struct InputNodeBundle {
     value: Value,
     input_node: InputNode,
     sprite: MaterialMesh2dBundle<ColorMaterial>,
+    interactable: Interactable,
 }
 
 impl InputNodeBundle {
@@ -34,6 +35,7 @@ impl InputNodeBundle {
         InputNodeBundle {
             value: Value::default(),
             input_node,
+            interactable: Interactable::default(),
             sprite: MaterialMesh2dBundle {
                 mesh: mesh_handle,
                 material: material_handle,

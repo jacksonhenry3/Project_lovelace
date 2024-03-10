@@ -2,7 +2,7 @@ use bevy::{prelude::*, sprite::MaterialMesh2dBundle};
 
 use crate::logic_gate::{input_node, output_node};
 use crate::sizes::{NOT_GATE_HEIGHT, NOT_GATE_WIDTH};
-use crate::{z_height_manager, ColorPallet, MeshType};
+use crate::{z_height_manager, ColorPallet, Interactable, MeshType};
 use crate::{Draggable, MaterialHandles, MeshHandles};
 
 use super::input_node::*;
@@ -27,6 +27,7 @@ pub struct ChipBundle {
     chip: Chip,
     sprite: MaterialMesh2dBundle<ColorMaterial>,
     draggable: Draggable,
+    interactable: Interactable,
 }
 
 #[derive(Bundle)]
@@ -59,7 +60,7 @@ impl NotBundle {
             .insert(Transform::from_translation(Vec3::new(
                 -NOT_GATE_WIDTH / 2.0,
                 0.0,
-                -0.5,
+                0.5,
             )))
             .id();
 
@@ -68,7 +69,7 @@ impl NotBundle {
             .insert(Transform::from_translation(Vec3::new(
                 NOT_GATE_WIDTH / 2.0,
                 0.0,
-                -0.5,
+                0.5,
             )))
             .id();
 
@@ -89,6 +90,7 @@ impl NotBundle {
             chip,
             sprite,
             draggable: Draggable::default(),
+            interactable: Interactable::default(),
         };
         let not_chip = commands.spawn((chip_bundle, NotGate)).id();
         commands.entity(not_chip).push_children(&[input, output]);
@@ -131,7 +133,7 @@ impl AndBundle {
             .insert(Transform::from_translation(Vec3::new(
                 -NOT_GATE_WIDTH / 2.,
                 NOT_GATE_HEIGHT / 2.,
-                -0.5,
+                0.5,
             )))
             .id();
 
@@ -140,7 +142,7 @@ impl AndBundle {
             .insert(Transform::from_translation(Vec3::new(
                 -NOT_GATE_WIDTH / 2.,
                 -NOT_GATE_HEIGHT / 2.,
-                -0.5,
+                0.5,
             )))
             .id();
 
@@ -149,7 +151,7 @@ impl AndBundle {
             .insert(Transform::from_translation(Vec3::new(
                 NOT_GATE_WIDTH / 2.,
                 0.0,
-                -0.5,
+                0.5,
             )))
             .id();
 
@@ -170,6 +172,7 @@ impl AndBundle {
             chip,
             sprite,
             draggable: Draggable::default(),
+            interactable: Interactable::default(),
         };
         let and_chip = commands.spawn((chip_bundle, AndGate)).id();
         commands

@@ -5,7 +5,7 @@ use bevy::{
     sprite::{MaterialMesh2dBundle, Mesh2dHandle},
 };
 
-use crate::{sizes, ColorPallet, Draggable, MaterialHandles};
+use crate::*;
 
 pub struct WorldInteractionPlugin;
 
@@ -28,7 +28,7 @@ pub fn make_board(
     meshes: &mut ResMut<Assets<Mesh>>,
     material_handles: &Res<MaterialHandles>,
 ) -> (
-    Draggable,
+    DraggableBundle,
     MaterialMesh2dBundle<bevy::prelude::ColorMaterial>,
     Board,
 ) {
@@ -37,12 +37,9 @@ pub fn make_board(
         sizes::BOARD_EDGE_LENGTH,
     )));
     let material_handle = material_handles[ColorPallet::BoardColor].clone();
-    
+
     (
-        Draggable {
-            being_dragged: false,
-            click_offset: Vec2::ZERO,
-        },
+        DraggableBundle::default(),
         MaterialMesh2dBundle {
             mesh: mesh_handle.clone(),
             material: material_handle.clone(),

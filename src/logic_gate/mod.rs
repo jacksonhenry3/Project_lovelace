@@ -1,13 +1,15 @@
+use bevy::prelude::*;
+
 pub mod chips;
 pub mod input_node;
 pub mod output_node;
 pub mod value;
 
-use bevy::prelude::*;
+pub use chips::*;
+pub use input_node::*;
+pub use output_node::*;
+pub use value::*;
 
-use self::chips::{and_gate_system, not_gate_system};
-
-// make a plugin to initialize the resources
 pub struct ChipPlugin;
 
 impl Plugin for ChipPlugin {
